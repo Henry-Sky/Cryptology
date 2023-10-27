@@ -17,5 +17,3 @@ def decode(ciphertext, key):
         else:
             originaltext += chr((ord(char) - ord("A") - key) % 26 + ord("A"))
     return originaltext
-    
-print(decode("YMNX NX GTTP",5)) 
