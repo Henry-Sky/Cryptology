@@ -1,4 +1,3 @@
- 
 # 根据密钥建立密码表(I表示I/J)
 def gen_matrix(key_word):
     word_list = 'ABCDEFGHIKLMNOPQRSTUVWXYZ'
@@ -28,7 +27,7 @@ def get_index(char, key_mat):
         for col in range(5):
             if char.upper() == key_mat[row][col]:
                 return row, col
-            
+
 def encryption(plaintext, key_word):
     plaintext = plaintext.replace(' ','')
     key_mat = gen_matrix(key_word)
@@ -45,7 +44,6 @@ def encryption(plaintext, key_word):
                 continue
             row1, col1 = get_index(p1, key_mat)
             row2, col2 = get_index(p2, key_mat)
-            
             if row1 == row2:
                 # 同一行,右移
                 c1 = key_mat[row1][(col1 + 1) % 5]
@@ -60,10 +58,11 @@ def encryption(plaintext, key_word):
                 c2 = key_mat[row2][col1]
             cipertext += (c1 + c2 + ' ')
         else:
+            # 原文字符为奇数个，补一个末尾字符的后一位
             end_chr = plaintext[index]
             plaintext += chr((ord(end_chr) - ord("a") + 1) % 26 + ord("a"))
             continue
         index += 2
     return cipertext
 
-print(encryption('this is a book','adc'))
+print(encryption('this is a bopod','adc'))
