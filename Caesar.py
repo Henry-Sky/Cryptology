@@ -1,5 +1,5 @@
 # 加密
-def code(originaltext, key):
+def encode(originaltext, key):
     ciphertext = ""
     for char in originaltext:
         if char == " ":
