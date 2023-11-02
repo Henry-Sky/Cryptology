@@ -38,7 +38,8 @@ def encryption(plaintext, key_word):
             p1, p2 = plaintext[index], plaintext[index + 1]
             if p1 == p2:
                 # p1, p2重复,中间插入p1后面一个字母
-                extra_p = chr((ord(p1) - ord("a") + 1) % 26 + ord("a"))
+                # extra_p = chr((ord(p1) - ord("a") + 1) % 26 + ord("a"))
+                extra_p = 'x'
                 plaintext = plaintext[0:index+1] + extra_p + plaintext[index+1:len(plaintext)+1]
                 # index不移动,重新进入判断
                 continue
@@ -60,9 +61,10 @@ def encryption(plaintext, key_word):
         else:
             # 原文字符为奇数个，补一个末尾字符的后一位
             end_chr = plaintext[index]
-            plaintext += chr((ord(end_chr) - ord("a") + 1) % 26 + ord("a"))
+            plaintext += 'z'
+            # plaintext += chr((ord(end_chr) - ord("a") + 1) % 26 + ord("a"))
             continue
         index += 2
     return cipertext
 
-print(encryption('this is a bopod','adc'))
+print(encryption('happymonday','weekday'))

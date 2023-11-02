@@ -19,3 +19,5 @@ def decryption(cipertext, key_word):
         plaintext += pla_char.lower()
         index += 1
     return plaintext
+
+print(decryption("AIDEHAGKEH", 'text'))
