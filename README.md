@@ -27,7 +27,7 @@
     3. RC4
     4. RSA
 
-### (1) 凯斯密码:Caesar.py
+### (1) 凯撒密码:Caesar.py
 key 为数字, 表示字母表移位
 - 加密: ci = (pi - ki) mod 26
 - 解密: pi = (ci + ki) mod 26
